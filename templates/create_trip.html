@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Create Trip{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <h2 class="mb-4">Create a New Trip</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Trip Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="goal_amount" class="form-label">Fundraising Goal ($)</label>
+                    <input type="number" class="form-control" id="goal_amount" name="goal_amount" min="1" step="0.01" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="max_participants" class="form-label">Number of People</label>
+                    <input type="number" class="form-control" id="max_participants" name="max_participants" min="2" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="details" class="form-label">Trip Details</label>
+                    <textarea class="form-control" id="details" name="details" rows="5" required></textarea>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="deadline" class="form-label">Fundraising Deadline</label>
+                    <input type="date" class="form-control" id="deadline" name="deadline" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Create Trip</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
